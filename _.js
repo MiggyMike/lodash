@@ -29,6 +29,21 @@ const _ = {
     let words = string.split(" ");
     return words;
   },
+  // game plan for implementing .pad() method -- takes two values (string, length, char)
+  pad(string, length) {
+    // either loop over the string for the duration of th length
+    if (length < string.length) {
+      // changed > to <
+      return string;
+    }
+    // create a var to store the start padded length = diff of length and strings length / 2 and rounded down
+    let startPad = Math.floor((length - string.length) / 2); //math.floor rounds down not math.round
+    // create var to store the end padded length = legnth minus strings length
+    let endPad = length - string.length - startPad;
+    let allPad = " ".repeat(startPad) + string + " ".repeat(endPad);
+
+    return allPad;
+  },
 };
 
 // Do not write or modify code below this line.
