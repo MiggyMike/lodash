@@ -31,18 +31,29 @@ const _ = {
   },
   // game plan for implementing .pad() method -- takes two values (string, length, char)
   pad(string, length) {
-    // either loop over the string for the duration of th length
-    if (length < string.length) {
+    // checking if the the length is less than/eqaul to the string length and if true return string
+    if (length <= string.length) {
       // changed > to <
       return string;
     }
+
     // create a var to store the start padded length = diff of length and strings length / 2 and rounded down
     let startPad = Math.floor((length - string.length) / 2); //math.floor rounds down not math.round
-    // create var to store the end padded length = legnth minus strings length
+    // create var to store the end padded length = legnth minus strings length - startPad
     let endPad = length - string.length - startPad;
+    // creating a var to put it all together usig the .repeat() method
     let allPad = " ".repeat(startPad) + string + " ".repeat(endPad);
 
     return allPad;
+  },
+  // implement has method -- takes two args (object and key)
+  // .has() checkes ti see if the provided obejct contains a values at a specified key
+  // returns true if value is present / false if not
+  has(object, key) {
+    // access the current value at the specified key in the object.
+    // check to see if the value at that key is undefined.
+    hasValue = object[key] != undefined;
+    return hasValue;
   },
 };
 
