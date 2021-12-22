@@ -23,6 +23,12 @@ const _ = {
     // Return the value of the previous operation from the method
     return isInRange;
   },
+  // game plan for implementing .words() method -- takes 1 value  (string)
+  words(string) {
+    // let arrWords = [];
+    let words = string.split(" ");
+    return words;
+  },
 };
 
 // Do not write or modify code below this line.
