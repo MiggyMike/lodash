@@ -47,13 +47,40 @@ const _ = {
     return allPad;
   },
   // implement has method -- takes two args (object and key)
-  // .has() checkes ti see if the provided obejct contains a values at a specified key
+  // .has() checkes to see if the provided obejct contains a values at a specified key
   // returns true if value is present / false if not
   has(object, key) {
     // access the current value at the specified key in the object.
     // check to see if the value at that key is undefined.
     hasValue = object[key] != undefined;
+    // return false if the value is undefined and true if not.
     return hasValue;
+  },
+
+  //  // maggies's method
+  // has(object, key){
+  //   const hasValue = object[key]
+  //   if(hasValue!= undefined){
+  //     return true;
+  //   }return false;
+  // }
+
+  // implement .invert() methd -- takes one arg (an object)
+  // iterates through each k/v pair in the provided object and swaps the key and value
+  invert(object) {
+    // create new object to represent inverted object
+    // Object = invertOject;
+    let invertedObject = {};
+    // iterate through each key with a for...in loop
+    for (const key in object) {
+      if (Object.hasOwnProperty.call(object, key)) {
+        // create a variable  to set it = to the v at the CURRENT key in object
+        let originalValue = object[key];
+        // set the VALUE of the inverted object to the originalValue to be the CURRENT key
+        invertedObject[originalValue] = key;
+      }
+      return invertedObject;
+    }
   },
 };
 
