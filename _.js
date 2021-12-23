@@ -67,32 +67,30 @@ const _ = {
 
   // implement .invert() methd -- takes one arg (an object)
   // iterates through each k/v pair in the provided object and swaps the key and value
-  // invert(object) {
-  //   // create new object to represent inverted object
-  //   // Object = invertOject;
-  //   let invertedObject = {};
-  //   // iterate through each key with a for...in loop
-  //   for (const key in object) {
-  //     if (Object.hasOwnProperty.call(object, key)) {
-  //       // create a variable  to set it = to the v at the CURRENT key in object
-  //       let originalValue = object[key];
-  //       // set the VALUE of the inverted object to the originalValue to be the CURRENT key
-  //       invertedObject[originalValue] = key;
-  //     }
-  //     return invertedObject;
-  //   }
-  // },
-
-  // MAGGIES APPROACH
   invert(object) {
+    // create new object to represent inverted object
+    // Object = invertOject;
     let invertedObject = {};
-    for (let key in object) {
-      const originalValue = object[key];
-      invertedObject = { originalValue: key };
+    // iterate through each key with a for...in loop
+    for (const key in object) {
+      // create a variable  to set it = to the v at the CURRENT key in object
+      let originalValue = object[key];
+      // set the VALUE of the inverted object to the originalValue to be the CURRENT key
+      invertedObject[originalValue] = key;
     }
     return invertedObject;
   },
-};
 
+  // MAGGIES APPROACH
+  //   invert(object) {
+  //     let invertedObject = {};
+  //     for (let key in object) {
+  //       const originalValue = object[key];
+  //       invertedObject = { originalValue: key };
+  //     }
+  //     return invertedObject;
+  //   },
+  // };
+};
 // Do not write or modify code below this line.
 module.exports = _;
