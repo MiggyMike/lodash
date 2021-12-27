@@ -153,7 +153,9 @@ const _ = {
     // loop throug arr and create arr chunks of specified size
     // i += size increments by size on each loop
     for (let i = 0; i < arr.length; i += size) {
+      // create var = to the chunk of the array going from the current loop index to the current loop index plus size
       arrChunk = arr.slice(i, i + size);
+      // add arrChunk to the end of arrChunks
       arrChunks.push(arrChunk);
     }
     return arrChunks;
