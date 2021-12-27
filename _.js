@@ -109,6 +109,21 @@ const _ = {
       return undefined;
     }
   },
+  // implement .drop() method -- takes 2 args, and arry and a number(number of items to drop)
+  //  returns a new arr containing all elements excluding the dropped items
+  // by default it drops 1
+  drop(arr, num) {
+    // check to see if num is set, if not set to zero
+    if (num === undefined || 0) {
+      num = 1;
+    }
+    // create new array with dropped elements. we can use .slice to achieve this
+    arrNew = arr.slice(num);
+    // MAGGIES version
+    // arrNew = arr.slice(num, arr.length);
+    // arr = arrNew;
+    return arrNew;
+  },
 };
 // Do not write or modify code below this line.
 module.exports = _;
