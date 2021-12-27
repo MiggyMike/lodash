@@ -141,6 +141,23 @@ const _ = {
     // return the modified arr
     return arrNew;
   },
+  // implement chunk() method -- takes two args(arr and size)
+  // takes an arry and separates into new individual arrays based on the size noted or 1, then groups those arrays in one array.
+  chunk(arr, size) {
+    // checks to see if size if defined
+    if (size === undefined || 0) {
+      let size = 1;
+    }
+    // ccreate var to hold arr chunks
+    arrChunks = [];
+    // loop throug arr and create arr chunks of specified size
+    // i += size increments by size on each loop
+    for (let i = 0; i < arr.length; i += size) {
+      arrChunk = arr.slice(i, i + size);
+      arrChunks.push(arrChunk);
+    }
+    return arrChunks;
+  },
 };
 // Do not write or modify code below this line.
 module.exports = _;
