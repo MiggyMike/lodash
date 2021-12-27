@@ -118,10 +118,27 @@ const _ = {
       num = 1;
     }
     // create new array with dropped elements. we can use .slice to achieve this
-    arrNew = arr.slice(num);
+    let arrNew = arr.slice(num);
     // MAGGIES version
     // arrNew = arr.slice(num, arr.length);
     // arr = arrNew;
+    return arrNew;
+  },
+  // implement dropWhile() -- takes two arg( array, predicate fn )
+  // the predicate fn take 3 args(current el, current el index, entire array)
+  // dW creates a new copy of the array, dropping el from the begining until an el causes the predicate fn to return falsy
+  dropWhile(arr, predicate) {
+    // anon callback function
+    const cb = (el, index) => {
+      // negate teh returned value of predicate to make all truthy -> falsy
+      return !predicate(el, index, arr);
+    };
+    // itereate through array until an element that cause a falsy value return USING .findIndex()
+    // pass an anon callback fn that takes to agrs (el, index) to the findIndex()
+    let numDropped = arr.findIndex(cb);
+    // use out .drop() method to drop the elements prior to that on that returned falsy
+    let arrNew = this.drop(arr, numDropped);
+    // return the modified arr
     return arrNew;
   },
 };
