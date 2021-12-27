@@ -91,6 +91,24 @@ const _ = {
   //     return invertedObject;
   //   },
   // };
+
+  // implement .findKey() method -- takes two arguemnts(object, predicate function(one that returns a boolean value))
+  //  iterates through each k/v an calls the predicate fn wit hthe value
+  //  returns the first value that returns truthy
+  //  returns undefined if no values  return truthy
+  findKey(object, fn) {
+    for (const key in object) {
+      // this var is set to = the current key in the object
+      const value = object[key];
+      //we need to create another var to hold the result of calling the predicate fn with value
+      // this var is set to = the result of calling the predicate w/value
+      let fnReturnValue = fn(value);
+      if (fnReturnValue === true) {
+        return key;
+      }
+      return undefined;
+    }
+  },
 };
 // Do not write or modify code below this line.
 module.exports = _;
